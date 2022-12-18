@@ -11,26 +11,16 @@
 
 <body>
     <div class="container">
-        <form action="https://formsubmit.co/2d10789236f2bb0b09587adf8610a587" method="POST" onsubmit="sendEmail();reset();return false;">
+        <form action="https://formsubmit.co/2d10789236f2bb0b09587adf8610a587" method="POST">
             <h3>Get in Touch!</h3>
             <input type="text" id="name" name="name" placeholder="Your name" required>
+            <input type="text" id="subject" name="subject" placeholder="Subject" required>
             <input type="text" id="email" name="email" placeholder="Your e-mail" required>
             <input type="text" id="phone" name="phone" placeholder="Your phone number" required>
             <textarea id="message" rows="4" name="massage" placeholder="Leave me a message!"></textarea>
             <button type="submit">send</button>
         </form>
     </div>
-    <script>
-        function sendEmail() {
-            Email.send({
-                From: document.getElementById('email').value(),
-                Subject: "New Contact From Contact Web",
-                Body: document.getElementById('message').value()
-            }).then(
-                message => alert(message)
-            );
-        }
-    </script>
 </body>
 
 </html>
