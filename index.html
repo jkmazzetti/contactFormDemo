@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Contact me</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="https://formsubmit.co/jere.mazzetti@gmail.com" method="POST" onsubmit="sendEmail();reset();return false;">
+            <h3>Get in Touch!</h3>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+            <input type="text" id="email" name="email" placeholder="Your e-mail" required>
+            <input type="text" id="phone" name="phone" placeholder="Your phone number" required>
+            <textarea id="message" rows="4" name="massage" placeholder="Leave me a message!"></textarea>
+            <button type="submit">send</button>
+        </form>
+    </div>
+    <script>
+        function sendEmail() {
+            Email.send({
+                From: document.getElementById('email').value(),
+                Subject: "New Contact From Contact Web",
+                Body: document.getElementById('message').value()
+            }).then(
+                message => alert(message)
+            );
+        }
+    </script>
+</body>
+
+</html>
